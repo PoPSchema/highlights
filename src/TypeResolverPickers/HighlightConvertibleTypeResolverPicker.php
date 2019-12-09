@@ -1,7 +1,7 @@
 <?php
 namespace PoP\Highlights\TypeResolvers;
 
-use PoP\ComponentModel\TypeResolvers\AbstractTypeResolverPicker;
+use PoP\ComponentModel\TypeResolverPickers\AbstractTypeResolverPicker;
 use PoP\Posts\TypeResolvers\PostConvertibleTypeResolver;
 use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
 
