@@ -5,7 +5,7 @@ use PoP\ComponentModel\TypeResolverPickers\AbstractTypeResolverPicker;
 use PoP\Posts\TypeResolvers\PostConvertibleTypeResolver;
 use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
 
-class HighlightConvertibleTypeResolverPicker extends AbstractTypeResolverPicker
+class HighlightTypeResolverPicker extends AbstractTypeResolverPicker
 {
     public static function getClassesToAttachTo(): array
     {
