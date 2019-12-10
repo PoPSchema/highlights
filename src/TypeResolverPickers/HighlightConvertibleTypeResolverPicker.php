@@ -1,5 +1,5 @@
 <?php
-namespace PoP\Highlights\TypeResolvers;
+namespace PoP\Highlights\TypeResolverPickers;
 
 use PoP\ComponentModel\TypeResolverPickers\AbstractTypeResolverPicker;
 use PoP\Posts\TypeResolvers\PostConvertibleTypeResolver;

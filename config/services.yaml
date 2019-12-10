@@ -2,3 +2,7 @@ services:
     PoP\Highlights\FieldResolvers\:
         resource: '../src/FieldResolvers/*'
         public: true
+
+    PoP\Highlights\TypeResolverPickers\:
+        resource: '../src/TypeResolverPickers/*'
+        public: true
