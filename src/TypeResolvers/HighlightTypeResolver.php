@@ -2,13 +2,13 @@
 namespace PoP\Highlights\TypeResolvers;
 
 use PoP\Posts\TypeResolvers\PostTypeResolver;
-use PoP\Highlights\TypeDataResolvers\HighlightTypeDataResolver;
+use PoP\Highlights\TypeDataLoaders\HighlightTypeDataLoader;
 
 class HighlightTypeResolver extends PostTypeResolver
 {
-    public function getTypeDataResolverClass(): string
+    public function getTypeDataLoaderClass(): string
     {
-        return HighlightTypeDataResolver::class;
+        return HighlightTypeDataLoader::class;
     }
 }
 

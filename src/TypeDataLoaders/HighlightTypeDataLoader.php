@@ -1,9 +1,9 @@
 <?php
-namespace PoP\Highlights\TypeDataResolvers;
+namespace PoP\Highlights\TypeDataLoaders;
 
-use PoP\Posts\TypeDataResolvers\PostTypeDataResolver;
+use PoP\Posts\TypeDataLoaders\PostTypeDataLoader;
 
-class HighlightTypeDataResolver extends PostTypeDataResolver
+class HighlightTypeDataLoader extends PostTypeDataLoader
 {
     public function getDataFromIdsQuery(array $ids): array
     {
