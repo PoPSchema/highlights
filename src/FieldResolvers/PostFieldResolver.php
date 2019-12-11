@@ -9,7 +9,7 @@ use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\LooseContracts\Facades\NameResolverFacade;
 use PoP\Posts\TypeResolvers\PostTypeResolver;
 use PoP\ComponentModel\Schema\TypeCastingHelpers;
-use PoP\Highlights\TypeDataResolvers\HighlightTypeDataResolver;
+use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
 
 class PostFieldResolver extends AbstractDBDataFieldResolver
 {
@@ -84,13 +84,13 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
         return parent::resolveValue($typeResolver, $resultItem, $fieldName, $fieldArgs, $variables, $expressions, $options);
     }
 
-    public function resolveFieldDefaultTypeDataResolverClass(TypeResolverInterface $typeResolver, string $fieldName, array $fieldArgs = []): ?string
+    public function resolveFieldTypeResolverClass(TypeResolverInterface $typeResolver, string $fieldName, array $fieldArgs = []): ?string
     {
         switch ($fieldName) {
             case 'highlights':
-                return HighlightTypeDataResolver::class;
+                return HighlightTypeResolver::class;
         }
 
-        return parent::resolveFieldDefaultTypeDataResolverClass($typeResolver, $fieldName, $fieldArgs);
+        return parent::resolveFieldTypeResolverClass($typeResolver, $fieldName, $fieldArgs);
     }
 }

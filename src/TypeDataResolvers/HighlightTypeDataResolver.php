@@ -2,7 +2,6 @@
 namespace PoP\Highlights\TypeDataResolvers;
 
 use PoP\Posts\TypeDataResolvers\PostTypeDataResolver;
-use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
 
 class HighlightTypeDataResolver extends PostTypeDataResolver
 {
@@ -12,7 +11,7 @@ class HighlightTypeDataResolver extends PostTypeDataResolver
         $query['post-types'] = array(POP_ADDHIGHLIGHTS_POSTTYPE_HIGHLIGHT);
         return $query;
     }
-    
+
     /**
      * Function to override
      */
@@ -23,10 +22,5 @@ class HighlightTypeDataResolver extends PostTypeDataResolver
         $query['post-types'] = array(POP_ADDHIGHLIGHTS_POSTTYPE_HIGHLIGHT);
 
         return $query;
-    }
-
-    public function getTypeResolverClass(): string
-    {
-        return HighlightTypeResolver::class;
     }
 }
