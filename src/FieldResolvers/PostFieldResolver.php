@@ -32,7 +32,7 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
     public function getSchemaFieldType(TypeResolverInterface $typeResolver, string $fieldName): ?string
     {
         $types = [
-            'highlights' => TypeCastingHelpers::combineTypes(SchemaDefinition::TYPE_ARRAY, SchemaDefinition::TYPE_ID),
+            'highlights' => TypeCastingHelpers::makeArray(SchemaDefinition::TYPE_ID),
             'has-highlights' => SchemaDefinition::TYPE_BOOL,
             'highlights-count' => SchemaDefinition::TYPE_INT,
         ];
