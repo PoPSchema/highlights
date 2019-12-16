@@ -2,7 +2,7 @@
 namespace PoP\Highlights\TypeResolverPickers;
 
 use PoP\ComponentModel\TypeResolverPickers\AbstractTypeResolverPicker;
-use PoP\Posts\TypeResolvers\PostConvertibleTypeResolver;
+use PoP\Posts\TypeResolvers\PostUnionTypeResolver;
 use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
 
 class HighlightTypeResolverPicker extends AbstractTypeResolverPicker
@@ -10,7 +10,7 @@ class HighlightTypeResolverPicker extends AbstractTypeResolverPicker
     public static function getClassesToAttachTo(): array
     {
         return [
-            PostConvertibleTypeResolver::class,
+            PostUnionTypeResolver::class,
         ];
     }
 
