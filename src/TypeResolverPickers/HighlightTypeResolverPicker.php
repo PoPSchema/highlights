@@ -14,11 +14,6 @@ class HighlightTypeResolverPicker extends AbstractTypeResolverPicker
         ];
     }
 
-    public function getSchemaDefinitionObjectNature(): string
-    {
-        return 'is-highlight';
-    }
-
     public function getTypeResolverClass(): string
     {
         return HighlightTypeResolver::class;
