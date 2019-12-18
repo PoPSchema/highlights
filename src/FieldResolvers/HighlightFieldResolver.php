@@ -7,6 +7,7 @@ use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\Posts\TypeResolvers\PostUnionTypeResolver;
 use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
+use PoP\ComponentModel\GeneralUtils;
 
 class HighlightFieldResolver extends AbstractDBDataFieldResolver
 {
@@ -77,7 +78,11 @@ class HighlightFieldResolver extends AbstractDBDataFieldResolver
                 return \PoP\PostMeta\Utils::getPostMeta($typeResolver->getId($highlight), GD_METAKEY_POST_HIGHLIGHTEDPOST, true);
 
             case 'highlightedpost-url':
-                return $cmspostsapi->getPermalink($typeResolver->resolveValue($highlight, 'highlightedpost'), $variables, $expressions, $options);
+                $highlightedPost = $typeResolver->resolveValue($highlight, 'highlightedpost', $variables, $expressions, $options);
+                if (GeneralUtils::isError($highlightedPost)) {
+                    return $highlightedPost;
+                }
+                return $cmspostsapi->getPermalink($highlightedPost);
         }
 
         return parent::resolveValue($typeResolver, $resultItem, $fieldName, $fieldArgs, $variables, $expressions, $options);

@@ -1,7 +1,6 @@
 <?php
 namespace PoP\Highlights\FieldResolvers;
 
-use PoP\ComponentModel\Utils;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
@@ -10,6 +9,7 @@ use PoP\LooseContracts\Facades\NameResolverFacade;
 use PoP\Posts\TypeResolvers\PostTypeResolver;
 use PoP\ComponentModel\Schema\TypeCastingHelpers;
 use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
+use PoP\ComponentModel\GeneralUtils;
 
 class PostFieldResolver extends AbstractDBDataFieldResolver
 {
@@ -73,11 +73,17 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
                 return $cmspostsapi->getPosts($query, ['return-type' => POP_RETURNTYPE_IDS]);
 
             case 'has-highlights':
-                $referencedby = $typeResolver->resolveValue($resultItem, 'highlights', $variables, $expressions, $options);
-                return !empty($referencedby);
+                $referencedbyCount = $typeResolver->resolveValue($resultItem, 'highlights-count', $variables, $expressions, $options);
+                if (GeneralUtils::isError($referencedbyCount)) {
+                    return $referencedbyCount;
+                }
+                return $referencedbyCount > 0;
 
             case 'highlights-count':
                 $referencedby = $typeResolver->resolveValue($resultItem, 'highlights', $variables, $expressions, $options);
+                if (GeneralUtils::isError($referencedby)) {
+                    return $referencedby;
+                }
                 return count($referencedby);
         }
 
