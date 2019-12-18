@@ -1,9 +1,10 @@
 <?php
 namespace PoP\Highlights\TypeResolverPickers;
 
-use PoP\ComponentModel\TypeResolverPickers\AbstractTypeResolverPicker;
+use PoP\Highlights\Facades\HighlightTypeAPIFacade;
 use PoP\Posts\TypeResolvers\PostUnionTypeResolver;
 use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
+use PoP\ComponentModel\TypeResolverPickers\AbstractTypeResolverPicker;
 
 class HighlightTypeResolverPicker extends AbstractTypeResolverPicker
 {
@@ -21,9 +22,7 @@ class HighlightTypeResolverPicker extends AbstractTypeResolverPicker
 
     public function process($resultItemOrID): bool
     {
-        $cmspostsapi = \PoP\Posts\FunctionAPIFactory::getInstance();
-        $cmspostsresolver = \PoP\Posts\ObjectPropertyResolverFactory::getInstance();
-        $postID = is_object($resultItemOrID) ? $cmspostsresolver->getPostId($resultItemOrID) : $resultItemOrID;
-        return $cmspostsapi->getPostType($postID) == POP_ADDHIGHLIGHTS_POSTTYPE_HIGHLIGHT;
+        $highlightTypeAPI = HighlightTypeAPIFacade::getInstance();
+        return $highlightTypeAPI->isInstanceOfHighlightType($resultItemOrID);
     }
 }
