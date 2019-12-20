@@ -10,6 +10,7 @@ use PoP\Posts\TypeResolvers\PostTypeResolver;
 use PoP\ComponentModel\Schema\TypeCastingHelpers;
 use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
 use PoP\ComponentModel\GeneralUtils;
+use PoP\Posts\Facades\PostTypeAPIFacade;
 
 class PostFieldResolver extends AbstractDBDataFieldResolver
 {
@@ -53,7 +54,7 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
     public function resolveValue(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = [], ?array $variables = null, ?array $expressions = null, array $options = [])
     {
         $post = $resultItem;
-        $cmspostsapi = \PoP\Posts\FunctionAPIFactory::getInstance();
+        $cmspostsapi = PostTypeAPIFacade::getInstance();
         switch ($fieldName) {
             case 'highlights':
                 $query = array(
