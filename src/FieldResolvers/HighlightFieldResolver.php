@@ -76,7 +76,7 @@ class HighlightFieldResolver extends AbstractDBDataFieldResolver
                 return $value;
 
             case 'highlightedpost':
-                return \PoP\PostMeta\Utils::getPostMeta($typeResolver->getId($highlight), GD_METAKEY_POST_HIGHLIGHTEDPOST, true);
+                return \PoP\PostMeta\Utils::getPostMeta($typeResolver->getID($highlight), GD_METAKEY_POST_HIGHLIGHTEDPOST, true);
 
             case 'highlightedpost-url':
                 $highlightedPost = $typeResolver->resolveValue($highlight, 'highlightedpost', $variables, $expressions, $options);

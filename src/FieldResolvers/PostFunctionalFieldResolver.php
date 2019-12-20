@@ -60,7 +60,7 @@ class PostFunctionalFieldResolver extends AbstractFunctionalFieldResolver
                 // $input_name = $moduleprocessor_manager->getProcessor($input)->getName($input);
                 $input_name = POP_INPUTNAME_HIGHLIGHTEDPOST;
                 return GeneralUtils::addQueryArgs([
-                    $input_name => $typeResolver->getId($post), 
+                    $input_name => $typeResolver->getID($post),
                 ], RouteUtils::getRouteURL($route));
         }
 

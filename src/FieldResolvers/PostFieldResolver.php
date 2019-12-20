@@ -63,7 +63,7 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
                     'meta-query' => [
                         [
                             'key' => \PoP\PostMeta\Utils::getMetaKey(GD_METAKEY_POST_HIGHLIGHTEDPOST),
-                            'value' => $typeResolver->getId($post),
+                            'value' => $typeResolver->getID($post),
                         ],
                     ],
                     'post-types' => [POP_ADDHIGHLIGHTS_POSTTYPE_HIGHLIGHT],

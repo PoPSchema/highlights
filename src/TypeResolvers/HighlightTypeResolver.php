@@ -21,7 +21,7 @@ class HighlightTypeResolver extends AbstractTypeResolver
         return $translationAPI->__('A highlighted piece of text, extracted from a post', 'highlights');
     }
 
-    public function getId($resultItem)
+    public function getID($resultItem)
     {
         $highlightTypeAPI = HighlightTypeAPIFacade::getInstance();
         return $highlightTypeAPI->getID($resultItem);
