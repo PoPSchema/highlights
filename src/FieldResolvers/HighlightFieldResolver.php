@@ -57,7 +57,7 @@ class HighlightFieldResolver extends AbstractDBDataFieldResolver
 
     public function resolveValue(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = [], ?array $variables = null, ?array $expressions = null, array $options = [])
     {
-        $cmspostsapi = PostTypeAPIFacade::getInstance();
+        $postTypeAPI = PostTypeAPIFacade::getInstance();
         $highlight = $resultItem;
         switch ($fieldName) {
 
@@ -67,7 +67,7 @@ class HighlightFieldResolver extends AbstractDBDataFieldResolver
             case 'title':
             case 'excerpt':
             case 'content':
-                $value = $cmspostsapi->getBasicPostContent($highlight);
+                $value = $postTypeAPI->getBasicPostContent($highlight);
                 if ($fieldName == 'title') {
                     return limitString($value, 100);
                 } elseif ($fieldName == 'excerpt') {
@@ -83,7 +83,7 @@ class HighlightFieldResolver extends AbstractDBDataFieldResolver
                 if (GeneralUtils::isError($highlightedPost)) {
                     return $highlightedPost;
                 }
-                return $cmspostsapi->getPermalink($highlightedPost);
+                return $postTypeAPI->getPermalink($highlightedPost);
         }
 
         return parent::resolveValue($typeResolver, $resultItem, $fieldName, $fieldArgs, $variables, $expressions, $options);

@@ -54,7 +54,7 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
     public function resolveValue(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = [], ?array $variables = null, ?array $expressions = null, array $options = [])
     {
         $post = $resultItem;
-        $cmspostsapi = PostTypeAPIFacade::getInstance();
+        $postTypeAPI = PostTypeAPIFacade::getInstance();
         switch ($fieldName) {
             case 'highlights':
                 $query = array(
@@ -71,7 +71,7 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
                     'order' => 'ASC',
                 );
 
-                return $cmspostsapi->getPosts($query, ['return-type' => POP_RETURNTYPE_IDS]);
+                return $postTypeAPI->getPosts($query, ['return-type' => POP_RETURNTYPE_IDS]);
 
             case 'has-highlights':
                 $referencedbyCount = $typeResolver->resolveValue($resultItem, 'highlights-count', $variables, $expressions, $options);
