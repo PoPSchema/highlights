@@ -3,6 +3,7 @@ namespace PoP\Highlights\TypeResolvers;
 
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\AbstractTypeResolver;
+use PoP\Highlights\Facades\HighlightTypeAPIFacade;
 use PoP\Highlights\TypeDataLoaders\HighlightTypeDataLoader;
 
 class HighlightTypeResolver extends AbstractTypeResolver
@@ -22,9 +23,8 @@ class HighlightTypeResolver extends AbstractTypeResolver
 
     public function getId($resultItem)
     {
-        $cmspostsresolver = \PoP\Posts\ObjectPropertyResolverFactory::getInstance();
-        $post = $resultItem;
-        return $cmspostsresolver->getPostId($post);
+        $highlightTypeAPI = HighlightTypeAPIFacade::getInstance();
+        return $highlightTypeAPI->getID($resultItem);
     }
 
     public function getTypeDataLoaderClass(): string

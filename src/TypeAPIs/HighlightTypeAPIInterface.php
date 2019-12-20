@@ -7,6 +7,13 @@ namespace PoP\Highlights\TypeAPIs;
 interface HighlightTypeAPIInterface
 {
     /**
+     * Return the highlight's ID
+     *
+     * @param [type] $highlight
+     * @return void
+     */
+    public function getID($highlight);
+    /**
      * Indicates if the passed object is of type Highlight
      *
      * @param [type] $object
