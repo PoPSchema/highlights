@@ -1,14 +1,15 @@
 <?php
 namespace PoP\Highlights\FieldResolvers;
 
-use PoP\Translation\Facades\TranslationAPIFacade;
-use PoP\ComponentModel\Schema\SchemaDefinition;
-use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
-use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
-use PoP\Content\TypeResolvers\ContentEntityUnionTypeResolver;
-use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
 use PoP\ComponentModel\GeneralUtils;
 use PoP\Posts\Facades\PostTypeAPIFacade;
+use PoP\ComponentModel\Schema\SchemaDefinition;
+use PoP\Translation\Facades\TranslationAPIFacade;
+use PoP\ComponentModel\TypeResolvers\UnionTypeHelpers;
+use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
+use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
+use PoP\Content\TypeResolvers\ContentEntityUnionTypeResolver;
+use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
 
 class HighlightFieldResolver extends AbstractDBDataFieldResolver
 {
@@ -93,7 +94,7 @@ class HighlightFieldResolver extends AbstractDBDataFieldResolver
     {
         switch ($fieldName) {
             case 'highlightedpost':
-                return ContentEntityUnionTypeResolver::class;
+                return UnionTypeHelpers::getUnionOrTargetTypeResolverClass(ContentEntityUnionTypeResolver::class);
         }
 
         return parent::resolveFieldTypeResolverClass($typeResolver, $fieldName, $fieldArgs);
