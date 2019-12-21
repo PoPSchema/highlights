@@ -2,7 +2,7 @@
 namespace PoP\Highlights\TypeResolverPickers;
 
 use PoP\Highlights\Facades\HighlightTypeAPIFacade;
-use PoP\Posts\TypeResolvers\PostUnionTypeResolver;
+use PoP\Posts\TypeResolvers\ContentEntityUnionTypeResolver;
 use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
 use PoP\ComponentModel\TypeResolverPickers\AbstractTypeResolverPicker;
 
@@ -11,7 +11,7 @@ class HighlightTypeResolverPicker extends AbstractTypeResolverPicker
     public static function getClassesToAttachTo(): array
     {
         return [
-            PostUnionTypeResolver::class,
+            ContentEntityUnionTypeResolver::class,
         ];
     }
 

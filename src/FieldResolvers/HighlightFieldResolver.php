@@ -5,7 +5,7 @@ use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
-use PoP\Posts\TypeResolvers\PostUnionTypeResolver;
+use PoP\Posts\TypeResolvers\ContentEntityUnionTypeResolver;
 use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
 use PoP\ComponentModel\GeneralUtils;
 use PoP\Posts\Facades\PostTypeAPIFacade;
@@ -93,7 +93,7 @@ class HighlightFieldResolver extends AbstractDBDataFieldResolver
     {
         switch ($fieldName) {
             case 'highlightedpost':
-                return PostUnionTypeResolver::class;
+                return ContentEntityUnionTypeResolver::class;
         }
 
         return parent::resolveFieldTypeResolverClass($typeResolver, $fieldName, $fieldArgs);
