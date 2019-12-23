@@ -1,20 +1,20 @@
 <?php
 namespace PoP\Highlights\FieldResolvers;
 
-use PoP\Translation\Facades\TranslationAPIFacade;
-use PoP\ComponentModel\Schema\SchemaDefinition;
-use PoP\ComponentModel\FieldResolvers\AbstractFunctionalFieldResolver;
-use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
-use PoP\ComponentModel\GeneralUtils;
 use PoP\Engine\Route\RouteUtils;
-use PoP\Posts\TypeResolvers\PostTypeResolver;
+use PoP\ComponentModel\GeneralUtils;
+use PoP\ComponentModel\Schema\SchemaDefinition;
+use PoP\Translation\Facades\TranslationAPIFacade;
+use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
+use PoP\Content\FieldInterfaces\ContentEntityFieldInterfaceResolver;
+use PoP\ComponentModel\FieldResolvers\AbstractFunctionalFieldResolver;
 
 class PostFunctionalFieldResolver extends AbstractFunctionalFieldResolver
 {
     public static function getClassesToAttachTo(): array
     {
         return array(
-            PostTypeResolver::class,
+            ContentEntityFieldInterfaceResolver::class,
         );
     }
 
