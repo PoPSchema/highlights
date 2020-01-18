@@ -21,14 +21,14 @@ class PostFunctionalFieldResolver extends AbstractFunctionalFieldResolver
     public static function getFieldNamesToResolve(): array
     {
         return [
-			'addhighlight-url',
+			'addhighlightURL',
         ];
     }
 
     public function getSchemaFieldType(TypeResolverInterface $typeResolver, string $fieldName): ?string
     {
         $types = [
-			'addhighlight-url' => SchemaDefinition::TYPE_URL,
+			'addhighlightURL' => SchemaDefinition::TYPE_URL,
         ];
         return $types[$fieldName] ?? parent::getSchemaFieldType($typeResolver, $fieldName);
     }
@@ -37,7 +37,7 @@ class PostFunctionalFieldResolver extends AbstractFunctionalFieldResolver
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
-			'addhighlight-url' => $translationAPI->__('', ''),
+			'addhighlightURL' => $translationAPI->__('', ''),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
     }
@@ -47,9 +47,9 @@ class PostFunctionalFieldResolver extends AbstractFunctionalFieldResolver
         $post = $resultItem;
         $cmsengineapi = \PoP\Engine\FunctionAPIFactory::getInstance();
         switch ($fieldName) {
-            case 'addhighlight-url':
+            case 'addhighlightURL':
                 $routes = array(
-                    'addhighlight-url' => POP_ADDHIGHLIGHTS_ROUTE_ADDHIGHLIGHT,
+                    'addhighlightURL' => POP_ADDHIGHLIGHTS_ROUTE_ADDHIGHLIGHT,
                 );
                 $route = $routes[$fieldName];
 

@@ -25,7 +25,7 @@ class HighlightFieldResolver extends AbstractDBDataFieldResolver
             'excerpt',
             'content',
             'highlightedpost',
-            'highlightedpost-url',
+            'highlightedPostURL',
             'highlightedpost',
         ];
     }
@@ -37,7 +37,7 @@ class HighlightFieldResolver extends AbstractDBDataFieldResolver
             'excerpt' => SchemaDefinition::TYPE_STRING,
             'content' => SchemaDefinition::TYPE_STRING,
             'highlightedpost' => SchemaDefinition::TYPE_ID,
-            'highlightedpost-url' => SchemaDefinition::TYPE_URL,
+            'highlightedPostURL' => SchemaDefinition::TYPE_URL,
         ];
         return $types[$fieldName] ?? parent::getSchemaFieldType($typeResolver, $fieldName);
     }
@@ -50,7 +50,7 @@ class HighlightFieldResolver extends AbstractDBDataFieldResolver
             'excerpt' => $translationAPI->__('', ''),
             'content' => $translationAPI->__('', ''),
             'highlightedpost' => $translationAPI->__('', ''),
-            'highlightedpost-url' => $translationAPI->__('', ''),
+            'highlightedPostURL' => $translationAPI->__('', ''),
             'highlightedpost' => $translationAPI->__('', ''),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
@@ -79,7 +79,7 @@ class HighlightFieldResolver extends AbstractDBDataFieldResolver
             case 'highlightedpost':
                 return \PoP\PostMeta\Utils::getPostMeta($typeResolver->getID($highlight), GD_METAKEY_POST_HIGHLIGHTEDPOST, true);
 
-            case 'highlightedpost-url':
+            case 'highlightedPostURL':
                 $highlightedPost = $typeResolver->resolveValue($highlight, 'highlightedpost', $variables, $expressions, $options);
                 if (GeneralUtils::isError($highlightedPost)) {
                     return $highlightedPost;

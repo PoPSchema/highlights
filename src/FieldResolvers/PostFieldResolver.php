@@ -25,8 +25,8 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
     {
         return [
             'highlights',
-            'has-highlights',
-            'highlights-count',
+            'hasHighlights',
+            'highlightsCount',
         ];
     }
 
@@ -34,8 +34,8 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
     {
         $types = [
             'highlights' => TypeCastingHelpers::makeArray(SchemaDefinition::TYPE_ID),
-            'has-highlights' => SchemaDefinition::TYPE_BOOL,
-            'highlights-count' => SchemaDefinition::TYPE_INT,
+            'hasHighlights' => SchemaDefinition::TYPE_BOOL,
+            'highlightsCount' => SchemaDefinition::TYPE_INT,
         ];
         return $types[$fieldName] ?? parent::getSchemaFieldType($typeResolver, $fieldName);
     }
@@ -45,8 +45,8 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
             'highlights' => $translationAPI->__('', ''),
-            'has-highlights' => $translationAPI->__('', ''),
-            'highlights-count' => $translationAPI->__('', ''),
+            'hasHighlights' => $translationAPI->__('', ''),
+            'highlightsCount' => $translationAPI->__('', ''),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
     }
@@ -73,14 +73,14 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
 
                 return $postTypeAPI->getPosts($query, ['return-type' => POP_RETURNTYPE_IDS]);
 
-            case 'has-highlights':
-                $referencedbyCount = $typeResolver->resolveValue($resultItem, 'highlights-count', $variables, $expressions, $options);
+            case 'hasHighlights':
+                $referencedbyCount = $typeResolver->resolveValue($resultItem, 'highlightsCount', $variables, $expressions, $options);
                 if (GeneralUtils::isError($referencedbyCount)) {
                     return $referencedbyCount;
                 }
                 return $referencedbyCount > 0;
 
-            case 'highlights-count':
+            case 'highlightsCount':
                 $referencedby = $typeResolver->resolveValue($resultItem, 'highlights', $variables, $expressions, $options);
                 if (GeneralUtils::isError($referencedby)) {
                     return $referencedby;
