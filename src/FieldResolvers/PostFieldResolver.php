@@ -1,7 +1,7 @@
 <?php
 namespace PoP\Highlights\FieldResolvers;
 
-use PoP\ComponentModel\GeneralUtils;
+use PoP\ComponentModel\Misc\GeneralUtils;
 use PoP\Posts\Facades\PostTypeAPIFacade;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\ComponentModel\Schema\TypeCastingHelpers;
