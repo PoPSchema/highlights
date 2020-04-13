@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace PoP\Highlights\TypeResolverPickers\Optional;
 
 use PoP\Content\TypeResolvers\ContentEntityUnionTypeResolver;

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace PoP\Highlights\FieldResolvers;
 
 use PoP\Engine\Route\RouteUtils;

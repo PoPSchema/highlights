@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace PoP\Highlights\Facades;
 
 use PoP\Highlights\TypeAPIs\HighlightTypeAPIInterface;
