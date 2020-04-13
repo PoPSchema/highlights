@@ -8,7 +8,7 @@ use PoP\Highlights\TypeDataLoaders\HighlightTypeDataLoader;
 
 class HighlightTypeResolver extends AbstractTypeResolver
 {
-	public const NAME = 'Highlight';
+    public const NAME = 'Highlight';
 
     public function getTypeName(): string
     {
@@ -32,4 +32,3 @@ class HighlightTypeResolver extends AbstractTypeResolver
         return HighlightTypeDataLoader::class;
     }
 }
-

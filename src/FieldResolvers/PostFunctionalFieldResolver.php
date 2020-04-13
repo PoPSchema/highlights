@@ -21,14 +21,14 @@ class PostFunctionalFieldResolver extends AbstractFunctionalFieldResolver
     public static function getFieldNamesToResolve(): array
     {
         return [
-			'addhighlightURL',
+            'addhighlightURL',
         ];
     }
 
     public function getSchemaFieldType(TypeResolverInterface $typeResolver, string $fieldName): ?string
     {
         $types = [
-			'addhighlightURL' => SchemaDefinition::TYPE_URL,
+            'addhighlightURL' => SchemaDefinition::TYPE_URL,
         ];
         return $types[$fieldName] ?? parent::getSchemaFieldType($typeResolver, $fieldName);
     }
@@ -37,7 +37,7 @@ class PostFunctionalFieldResolver extends AbstractFunctionalFieldResolver
     {
         $translationAPI = TranslationAPIFacade::getInstance();
         $descriptions = [
-			'addhighlightURL' => $translationAPI->__('', ''),
+            'addhighlightURL' => $translationAPI->__('', ''),
         ];
         return $descriptions[$fieldName] ?? parent::getSchemaFieldDescription($typeResolver, $fieldName);
     }

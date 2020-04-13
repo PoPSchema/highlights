@@ -61,7 +61,6 @@ class HighlightFieldResolver extends AbstractDBDataFieldResolver
         $postTypeAPI = PostTypeAPIFacade::getInstance();
         $highlight = $resultItem;
         switch ($fieldName) {
-
          // Override fields for Highlights
          // The Stance has no title, so return the excerpt instead.
          // Needed for when adding a comment on the Stance, where it will say: Add comment for...
