@@ -1,2 +1,2 @@
 <?php
-\PoP\Highlights\Component::init();
+//\PoP\Highlights\Component::initialize();
