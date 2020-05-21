@@ -20,12 +20,13 @@ Via Composer
 composer require getpop/highlights
 ```
 
-<!--
 ## Usage
 
+Initialize the component:
+
 ``` php
+\PoP\Highlights\Component::initialize();
 ```
--->
 
 ## Standards
 
