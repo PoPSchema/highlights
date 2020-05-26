@@ -25,7 +25,9 @@ composer require getpop/highlights
 Initialize the component:
 
 ``` php
-\PoP\Highlights\Component::initialize();
+\PoP\Root\ComponentLoader::initializeComponents([
+    \PoP\Highlights\Component::class,
+]);
 ```
 
 ## Standards
