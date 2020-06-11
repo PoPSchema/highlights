@@ -9,7 +9,7 @@ use PoP\ComponentModel\Misc\GeneralUtils;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
-use PoP\Content\FieldInterfaces\ContentEntityFieldInterfaceResolver;
+use PoP\Content\FieldInterfaces\CustomPostFieldInterfaceResolver;
 use PoP\ComponentModel\FieldResolvers\AbstractFunctionalFieldResolver;
 
 class PostFunctionalFieldResolver extends AbstractFunctionalFieldResolver
@@ -17,7 +17,7 @@ class PostFunctionalFieldResolver extends AbstractFunctionalFieldResolver
     public static function getClassesToAttachTo(): array
     {
         return array(
-            ContentEntityFieldInterfaceResolver::class,
+            CustomPostFieldInterfaceResolver::class,
         );
     }
 

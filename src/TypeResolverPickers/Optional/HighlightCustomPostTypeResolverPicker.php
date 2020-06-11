@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace PoP\Highlights\TypeResolverPickers\Optional;
 
-use PoP\Content\TypeResolvers\ContentEntityUnionTypeResolver;
+use PoP\Content\TypeResolvers\CustomPostUnionTypeResolver;
 use PoP\Highlights\TypeResolverPickers\AbstractHighlightTypeResolverPicker;
 
-class HighlightContentEntityTypeResolverPicker extends AbstractHighlightTypeResolverPicker
+class HighlightCustomPostTypeResolverPicker extends AbstractHighlightTypeResolverPicker
 {
     public static function getClassesToAttachTo(): array
     {
         return [
-            ContentEntityUnionTypeResolver::class,
+            CustomPostUnionTypeResolver::class,
         ];
     }
 }

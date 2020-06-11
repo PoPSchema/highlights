@@ -13,14 +13,14 @@ use PoP\LooseContracts\Facades\NameResolverFacade;
 use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
-use PoP\Content\FieldInterfaces\ContentEntityFieldInterfaceResolver;
+use PoP\Content\FieldInterfaces\CustomPostFieldInterfaceResolver;
 
 class PostFieldResolver extends AbstractDBDataFieldResolver
 {
     public static function getClassesToAttachTo(): array
     {
         return array(
-            ContentEntityFieldInterfaceResolver::class,
+            CustomPostFieldInterfaceResolver::class,
         );
     }
 

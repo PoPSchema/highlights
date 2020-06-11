@@ -9,7 +9,7 @@ use PoP\Root\Component\AbstractComponent;
 use PoP\Root\Component\YAMLServicesTrait;
 use PoP\ComponentModel\Container\ContainerBuilderUtils;
 use PoP\ComponentModel\AttachableExtensions\AttachableExtensionGroups;
-use PoP\Highlights\TypeResolverPickers\Optional\HighlightContentEntityTypeResolverPicker;
+use PoP\Highlights\TypeResolverPickers\Optional\HighlightCustomPostTypeResolverPicker;
 
 /**
  * Initialize component
@@ -72,11 +72,11 @@ class Component extends AbstractComponent
      */
     protected static function attachTypeResolverPickers()
     {
-        if (Environment::addHighlightTypeToContentEntityUnionTypes()
+        if (Environment::addHighlightTypeToCustomPostUnionTypes()
             // If $skipSchema is `true`, then services are not registered
             && !empty(ContainerBuilderUtils::getServiceClassesUnderNamespace(__NAMESPACE__ . '\\TypeResolverPickers'))
         ) {
-            HighlightContentEntityTypeResolverPicker::attach(AttachableExtensionGroups::TYPERESOLVERPICKERS);
+            HighlightCustomPostTypeResolverPicker::attach(AttachableExtensionGroups::TYPERESOLVERPICKERS);
         }
     }
 }
