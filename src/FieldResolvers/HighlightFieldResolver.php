@@ -11,7 +11,7 @@ use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\UnionTypeHelpers;
 use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
-use PoP\Content\TypeResolvers\CustomPostUnionTypeResolver;
+use PoP\CustomPosts\TypeResolvers\CustomPostUnionTypeResolver;
 use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
 
 class HighlightFieldResolver extends AbstractDBDataFieldResolver
