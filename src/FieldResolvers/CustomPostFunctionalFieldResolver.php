@@ -12,7 +12,7 @@ use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\CustomPosts\FieldInterfaces\CustomPostFieldInterfaceResolver;
 use PoP\ComponentModel\FieldResolvers\AbstractFunctionalFieldResolver;
 
-class PostFunctionalFieldResolver extends AbstractFunctionalFieldResolver
+class CustomPostFunctionalFieldResolver extends AbstractFunctionalFieldResolver
 {
     public static function getClassesToAttachTo(): array
     {
