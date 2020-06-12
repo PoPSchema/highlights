@@ -78,7 +78,7 @@ class PostFieldResolver extends AbstractDBDataFieldResolver
                     'limit'/*'posts-per-page'*/ => -1, // Bring all the results
                     'meta-query' => [
                         [
-                            'key' => \PoP\PostMeta\Utils::getMetaKey(GD_METAKEY_POST_HIGHLIGHTEDPOST),
+                            'key' => \PoP\CustomPostMeta\Utils::getMetaKey(GD_METAKEY_POST_HIGHLIGHTEDPOST),
                             'value' => $typeResolver->getID($post),
                         ],
                     ],
