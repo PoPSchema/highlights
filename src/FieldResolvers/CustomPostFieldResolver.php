@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace PoP\Highlights\FieldResolvers;
 
 use PoP\ComponentModel\Misc\GeneralUtils;
-use PoP\Posts\Facades\PostTypeAPIFacade;
+use PoP\CustomPosts\Facades\CustomPostTypeAPIFacade;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\ComponentModel\Schema\TypeCastingHelpers;
 use PoP\Translation\Facades\TranslationAPIFacade;
@@ -69,8 +69,8 @@ class CustomPostFieldResolver extends AbstractDBDataFieldResolver
 
     public function resolveValue(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = [], ?array $variables = null, ?array $expressions = null, array $options = [])
     {
-        $post = $resultItem;
-        $postTypeAPI = PostTypeAPIFacade::getInstance();
+        $customPost = $resultItem;
+        $customPostTypeAPI = CustomPostTypeAPIFacade::getInstance();
         switch ($fieldName) {
             case 'highlights':
                 $query = array(
@@ -79,7 +79,7 @@ class CustomPostFieldResolver extends AbstractDBDataFieldResolver
                     'meta-query' => [
                         [
                             'key' => \PoP\CustomPostMeta\Utils::getMetaKey(GD_METAKEY_POST_HIGHLIGHTEDPOST),
-                            'value' => $typeResolver->getID($post),
+                            'value' => $typeResolver->getID($customPost),
                         ],
                     ],
                     'post-types' => [POP_ADDHIGHLIGHTS_POSTTYPE_HIGHLIGHT],
@@ -87,7 +87,7 @@ class CustomPostFieldResolver extends AbstractDBDataFieldResolver
                     'order' => 'ASC',
                 );
 
-                return $postTypeAPI->getPosts($query, ['return-type' => POP_RETURNTYPE_IDS]);
+                return $customPostTypeAPI->getCustomPosts($query, ['return-type' => POP_RETURNTYPE_IDS]);
 
             case 'hasHighlights':
                 $referencedbyCount = $typeResolver->resolveValue($resultItem, 'highlightsCount', $variables, $expressions, $options);
