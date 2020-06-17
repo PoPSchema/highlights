@@ -75,7 +75,7 @@ class CustomPostFieldResolver extends AbstractDBDataFieldResolver
             case 'highlights':
                 $query = array(
                     // 'fields' => 'ids',
-                    'limit'/*'posts-per-page'*/ => -1, // Bring all the results
+                    'limit' => -1, // Bring all the results
                     'meta-query' => [
                         [
                             'key' => \PoP\CustomPostMeta\Utils::getMetaKey(GD_METAKEY_POST_HIGHLIGHTEDPOST),

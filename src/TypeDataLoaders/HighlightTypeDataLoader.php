@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace PoP\Highlights\TypeDataLoaders;
 
-use PoP\Posts\TypeDataLoaders\PostTypeDataLoader;
+use PoP\CustomPosts\TypeDataLoaders\CustomPostTypeDataLoader;
 
-class HighlightTypeDataLoader extends PostTypeDataLoader
+class HighlightTypeDataLoader extends CustomPostTypeDataLoader
 {
     public function getDataFromIdsQuery(array $ids): array
     {

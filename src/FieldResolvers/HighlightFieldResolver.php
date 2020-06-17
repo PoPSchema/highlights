@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace PoP\Highlights\FieldResolvers;
 
 use PoP\ComponentModel\Misc\GeneralUtils;
-use PoP\Posts\Facades\PostTypeAPIFacade;
+use PoP\CustomPosts\Facades\CustomPostTypeAPIFacade;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\UnionTypeHelpers;
@@ -73,7 +73,7 @@ class HighlightFieldResolver extends AbstractDBDataFieldResolver
 
     public function resolveValue(TypeResolverInterface $typeResolver, $resultItem, string $fieldName, array $fieldArgs = [], ?array $variables = null, ?array $expressions = null, array $options = [])
     {
-        $postTypeAPI = PostTypeAPIFacade::getInstance();
+        $customPostTypeAPI = CustomPostTypeAPIFacade::getInstance();
         $highlight = $resultItem;
         switch ($fieldName) {
          // Override fields for Highlights
@@ -82,7 +82,7 @@ class HighlightFieldResolver extends AbstractDBDataFieldResolver
             case 'title':
             case 'excerpt':
             case 'content':
-                $value = $postTypeAPI->getBasicPostContent($highlight);
+                $value = $customPostTypeAPI->getPlainTextContent($highlight);
                 if ($fieldName == 'title') {
                     return limitString($value, 100);
                 } elseif ($fieldName == 'excerpt') {
@@ -98,7 +98,7 @@ class HighlightFieldResolver extends AbstractDBDataFieldResolver
                 if (GeneralUtils::isError($highlightedPost)) {
                     return $highlightedPost;
                 }
-                return $postTypeAPI->getPermalink($highlightedPost);
+                return $customPostTypeAPI->getPermalink($highlightedPost);
         }
 
         return parent::resolveValue($typeResolver, $resultItem, $fieldName, $fieldArgs, $variables, $expressions, $options);
