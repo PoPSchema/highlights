@@ -82,7 +82,7 @@ class CustomPostFieldResolver extends AbstractDBDataFieldResolver
                             'value' => $typeResolver->getID($customPost),
                         ],
                     ],
-                    'post-types' => [POP_ADDHIGHLIGHTS_POSTTYPE_HIGHLIGHT],
+                    'custom-post-types' => [POP_ADDHIGHLIGHTS_POSTTYPE_HIGHLIGHT],
                     'orderby' => NameResolverFacade::getInstance()->getName('popcms:dbcolumn:orderby:posts:date'),
                     'order' => 'ASC',
                 );
