@@ -1,12 +1,12 @@
 services:
-    PoP\Highlights\FieldResolvers\:
+    PoPSchema\Highlights\FieldResolvers\:
         resource: '../src/FieldResolvers/*'
         public: true
 
-    PoP\Highlights\TypeResolverPickers\:
+    PoPSchema\Highlights\TypeResolverPickers\:
         resource: '../src/TypeResolverPickers/*'
         public: true
 
-    PoP\Highlights\TypeResolvers\:
+    PoPSchema\Highlights\TypeResolvers\:
         resource: '../src/TypeResolvers/*'
         public: true

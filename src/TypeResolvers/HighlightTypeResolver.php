@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PoP\Highlights\TypeResolvers;
+namespace PoPSchema\Highlights\TypeResolvers;
 
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\ComponentModel\TypeResolvers\AbstractTypeResolver;
-use PoP\Highlights\Facades\HighlightTypeAPIFacade;
-use PoP\Highlights\TypeDataLoaders\HighlightTypeDataLoader;
+use PoPSchema\Highlights\Facades\HighlightTypeAPIFacade;
+use PoPSchema\Highlights\TypeDataLoaders\HighlightTypeDataLoader;
 
 class HighlightTypeResolver extends AbstractTypeResolver
 {

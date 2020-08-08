@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace PoP\Highlights\FieldResolvers;
+namespace PoPSchema\Highlights\FieldResolvers;
 
 use PoP\ComponentModel\Misc\GeneralUtils;
-use PoP\CustomPosts\Facades\CustomPostTypeAPIFacade;
+use PoPSchema\CustomPosts\Facades\CustomPostTypeAPIFacade;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\Translation\Facades\TranslationAPIFacade;
-use PoP\CustomPosts\TypeHelpers\CustomPostUnionTypeHelpers;
-use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
+use PoPSchema\CustomPosts\TypeHelpers\CustomPostUnionTypeHelpers;
+use PoPSchema\Highlights\TypeResolvers\HighlightTypeResolver;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
-use PoP\CustomPosts\TypeResolvers\CustomPostUnionTypeResolver;
+use PoPSchema\CustomPosts\TypeResolvers\CustomPostUnionTypeResolver;
 use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
 
 class HighlightFieldResolver extends AbstractDBDataFieldResolver
@@ -91,7 +91,7 @@ class HighlightFieldResolver extends AbstractDBDataFieldResolver
                 return $value;
 
             case 'highlightedpost':
-                return \PoP\CustomPostMeta\Utils::getCustomPostMeta($typeResolver->getID($highlight), GD_METAKEY_POST_HIGHLIGHTEDPOST, true);
+                return \PoPSchema\CustomPostMeta\Utils::getCustomPostMeta($typeResolver->getID($highlight), GD_METAKEY_POST_HIGHLIGHTEDPOST, true);
 
             case 'highlightedPostURL':
                 $highlightedPost = $typeResolver->resolveValue($highlight, 'highlightedpost', $variables, $expressions, $options);

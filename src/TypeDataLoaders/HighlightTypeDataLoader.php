@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PoP\Highlights\TypeDataLoaders;
+namespace PoPSchema\Highlights\TypeDataLoaders;
 
-use PoP\CustomPosts\TypeDataLoaders\AbstractCustomPostTypeDataLoader;
+use PoPSchema\CustomPosts\TypeDataLoaders\AbstractCustomPostTypeDataLoader;
 
 class HighlightTypeDataLoader extends AbstractCustomPostTypeDataLoader
 {

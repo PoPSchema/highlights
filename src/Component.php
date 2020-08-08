@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace PoP\Highlights;
+namespace PoPSchema\Highlights;
 
-use PoP\Highlights\Environment;
+use PoPSchema\Highlights\Environment;
 use PoP\Root\Component\AbstractComponent;
 use PoP\Root\Component\YAMLServicesTrait;
 use PoP\ComponentModel\Container\ContainerBuilderUtils;
 use PoP\ComponentModel\AttachableExtensions\AttachableExtensionGroups;
-use PoP\Highlights\TypeResolverPickers\Optional\HighlightCustomPostTypeResolverPicker;
+use PoPSchema\Highlights\TypeResolverPickers\Optional\HighlightCustomPostTypeResolverPicker;
 
 /**
  * Initialize component
@@ -22,7 +22,7 @@ class Component extends AbstractComponent
     public static function getDependedComponentClasses(): array
     {
         return [
-            \PoP\CustomPosts\Component::class,
+            \PoPSchema\CustomPosts\Component::class,
         ];
     }
 

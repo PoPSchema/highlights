@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PoP\Highlights\TypeResolverPickers\Optional;
+namespace PoPSchema\Highlights\TypeResolverPickers\Optional;
 
-use PoP\CustomPosts\TypeResolvers\CustomPostUnionTypeResolver;
-use PoP\Highlights\TypeResolverPickers\AbstractHighlightTypeResolverPicker;
+use PoPSchema\CustomPosts\TypeResolvers\CustomPostUnionTypeResolver;
+use PoPSchema\Highlights\TypeResolverPickers\AbstractHighlightTypeResolverPicker;
 
 class HighlightCustomPostTypeResolverPicker extends AbstractHighlightTypeResolverPicker
 {

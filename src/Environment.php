@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoP\Highlights;
+namespace PoPSchema\Highlights;
 
 class Environment
 {

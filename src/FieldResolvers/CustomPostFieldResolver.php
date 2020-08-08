@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace PoP\Highlights\FieldResolvers;
+namespace PoPSchema\Highlights\FieldResolvers;
 
 use PoP\ComponentModel\Misc\GeneralUtils;
-use PoP\CustomPosts\Facades\CustomPostTypeAPIFacade;
+use PoPSchema\CustomPosts\Facades\CustomPostTypeAPIFacade;
 use PoP\ComponentModel\Schema\SchemaDefinition;
 use PoP\ComponentModel\Schema\TypeCastingHelpers;
 use PoP\Translation\Facades\TranslationAPIFacade;
 use PoP\LooseContracts\Facades\NameResolverFacade;
-use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
+use PoPSchema\Highlights\TypeResolvers\HighlightTypeResolver;
 use PoP\ComponentModel\TypeResolvers\TypeResolverInterface;
 use PoP\ComponentModel\FieldResolvers\AbstractDBDataFieldResolver;
-use PoP\CustomPosts\FieldInterfaceResolvers\IsCustomPostFieldInterfaceResolver;
+use PoPSchema\CustomPosts\FieldInterfaceResolvers\IsCustomPostFieldInterfaceResolver;
 
 class CustomPostFieldResolver extends AbstractDBDataFieldResolver
 {
@@ -78,7 +78,7 @@ class CustomPostFieldResolver extends AbstractDBDataFieldResolver
                     'limit' => -1, // Bring all the results
                     'meta-query' => [
                         [
-                            'key' => \PoP\CustomPostMeta\Utils::getMetaKey(GD_METAKEY_POST_HIGHLIGHTEDPOST),
+                            'key' => \PoPSchema\CustomPostMeta\Utils::getMetaKey(GD_METAKEY_POST_HIGHLIGHTEDPOST),
                             'value' => $typeResolver->getID($customPost),
                         ],
                     ],

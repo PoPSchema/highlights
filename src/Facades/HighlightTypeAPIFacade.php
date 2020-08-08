@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PoP\Highlights\Facades;
+namespace PoPSchema\Highlights\Facades;
 
-use PoP\Highlights\TypeAPIs\HighlightTypeAPIInterface;
+use PoPSchema\Highlights\TypeAPIs\HighlightTypeAPIInterface;
 use PoP\Root\Container\ContainerBuilderFactory;
 
 class HighlightTypeAPIFacade

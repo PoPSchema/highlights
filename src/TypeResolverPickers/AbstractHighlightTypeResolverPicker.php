@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PoP\Highlights\TypeResolverPickers;
+namespace PoPSchema\Highlights\TypeResolverPickers;
 
-use PoP\Highlights\Facades\HighlightTypeAPIFacade;
-use PoP\Highlights\TypeResolvers\HighlightTypeResolver;
+use PoPSchema\Highlights\Facades\HighlightTypeAPIFacade;
+use PoPSchema\Highlights\TypeResolvers\HighlightTypeResolver;
 use PoP\ComponentModel\TypeResolverPickers\AbstractTypeResolverPicker;
 
 class AbstractHighlightTypeResolverPicker extends AbstractTypeResolverPicker
