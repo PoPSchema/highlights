@@ -14,7 +14,7 @@ class HighlightTypeAPIFacade
         /**
          * @var HighlightTypeAPIInterface
          */
-        $service = ContainerBuilderFactory::getInstance()->get('highlight_type_api');
+        $service = ContainerBuilderFactory::getInstance()->get(HighlightTypeAPIInterface::class);
         return $service;
     }
 }
