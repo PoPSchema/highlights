@@ -11,7 +11,7 @@ class HighlightTypeDataLoader extends AbstractCustomPostTypeDataLoader
     public function getDataFromIdsQuery(array $ids): array
     {
         $query = parent::getDataFromIdsQuery($ids);
-        $query['custom-post-types'] = array(POP_ADDHIGHLIGHTS_POSTTYPE_HIGHLIGHT);
+        $query['custompost-types'] = array(POP_ADDHIGHLIGHTS_POSTTYPE_HIGHLIGHT);
         return $query;
     }
 
@@ -22,7 +22,7 @@ class HighlightTypeDataLoader extends AbstractCustomPostTypeDataLoader
     {
         $query = parent::getQuery($query_args);
 
-        $query['custom-post-types'] = array(POP_ADDHIGHLIGHTS_POSTTYPE_HIGHLIGHT);
+        $query['custompost-types'] = array(POP_ADDHIGHLIGHTS_POSTTYPE_HIGHLIGHT);
 
         return $query;
     }
