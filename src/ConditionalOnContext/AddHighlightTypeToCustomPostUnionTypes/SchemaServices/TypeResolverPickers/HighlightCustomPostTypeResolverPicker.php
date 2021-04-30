@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoPSchema\Highlights\ConditionalOnEnvironment\AddHighlightTypeToCustomPostUnionTypes\SchemaServices\TypeResolverPickers;
+namespace PoPSchema\Highlights\ConditionalOnContext\AddHighlightTypeToCustomPostUnionTypes\SchemaServices\TypeResolverPickers;
 
 use PoPSchema\CustomPosts\TypeResolvers\CustomPostUnionTypeResolver;
 use PoPSchema\Highlights\TypeResolverPickers\AbstractHighlightTypeResolverPicker;
